@@ -13,6 +13,19 @@ Before the script starts, three variables can be set:
 - Backdays, a variable of int type. The variable determines how many "days" are relevant for the one future predicted value. (Default: 20)
 - forecast_period, a variable of int type, The variable set the number of predicted "days". (Default: 10)
 
+### Learning variables
+The script includes variables for learning duration. Variable EarlyStopping can be changed, if the script should run until the end of the epochs.
+```python
+my_callbacks = [
+    EarlyStopping(patience=200),
+]
+```
+Change the number of epochs can be increased in model fit.
+```python
+model.fit(X, Y, epochs=1000, validation_split=0.2, verbose=2, callbacks=my_callbacks)
+```
+At the moment it is set, that the data list should be longer than 60 rows.
+
 ## To-Do
 - Add type check for input data
 - Add requirements.txt
