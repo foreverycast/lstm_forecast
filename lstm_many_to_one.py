@@ -100,7 +100,7 @@ my_callbacks = [
     EarlyStopping(patience=200),
 ]
 
-history = model.fit(X, Y, epochs=1000, validation_split=0.2, verbose=2, callbacks=my_callbacks)
+model.fit(X, Y, epochs=1000, validation_split=0.2, verbose=2, callbacks=my_callbacks)
 
 # Save model
 # model.save('model_symbol/my_model')
